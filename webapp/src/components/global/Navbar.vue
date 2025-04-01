@@ -21,7 +21,7 @@ const navlinks = ref<NavLink[]>([
     <RouterLink to="/homeView">
       <Icon type="home" size="base" class="p-2 rounded-md bg-blue-600 text-zinc-300"></Icon>
     </RouterLink>
-    <Theme type="iconOnly"></Theme>
+    <Theme :icon-only="true"></Theme>
     <RouterLink v-for="(navlink, key) in navlinks" :key="key" :to="`/${navlink.route}`">{{ navlink.name }}</RouterLink>
   </div>
 </template>
