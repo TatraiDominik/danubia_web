@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-
+import Button from '@/components/global/Button.vue';
+import Theme from '@/components/global/Theme.vue';
+import router from '@/router';
 const homeSvgs = {
   wave: "wave.svg",
   blob: "blob.svg",
@@ -39,22 +41,25 @@ const processedSvg = computed(() => {
     </div>
 
 
-    <section class="relative w-full h-full">
+    <section class="relative w-full h-[94.2%]">
       <div class="lightYellow absolute left-[17%] top-1/2 w-[35%] h-[35%] z-[-1]"><!--Circle--></div>
       <div class="darkYellow absolute right-[17%] top-0 w-[35%] h-[35%] z-[-1]"><!--Circle--></div>
       <div class="relative flex flex-col justify-center content-center items-center w-full h-full gap-5">
 
-        <div class="relative flex flex-col justify-center w-[60%] h-[60%] content-center items-center z-10 text-zinc-100 dark:text-zinc-100 name">
+        <div class="relative flex flex-col justify-center w-[60%] h-[60%] content-center items-center z-10 text-zinc-100 dark:text-zinc-100 gap-10 name">
 
           <div class="flex flex-col justify-center content-start items-start gap-2">
-            <h3 class="2xl:text-7xl xl:text-6xl lg:text-6xl md:text-5xl sm:text-4xl text-4xl">Danubia</h3>
-            <h3 class="2xl:text-7xl xl:text-6xl lg:text-6xl md:text-5xl sm:text-4xl text-4xl">Alapfokú</h3>
-            <h3 class="2xl:text-7xl xl:text-6xl lg:text-6xl md:text-5xl sm:text-4xl text-4xl">Művészeti Iskola</h3>
+            <h3 class="2xl:text-6xl xl:text-5xl lg:text-5xl md:text-4xl sm:text-3xl text-4xl">Danubia</h3>
+            <h3 class="2xl:text-6xl xl:text-5xl lg:text-5xl md:text-4xl sm:text-3xl text-4xl">Alapfokú</h3>
+            <h3 class="2xl:text-6xl xl:text-5xl lg:text-5xl md:text-4xl sm:text-3xl text-4xl">Művészeti Iskola</h3>
+          </div>
+          <div class="w-full flex flex-row justify-center content-center items-center flex-wrap gap-5">
+            <Button rank="primary" size="normal" icon-position="none" text="Képzéseink" :onClick="()=> router.push('/trainings')"></Button>
+            <Button rank="secondary" size="normal" icon-position="none" text="Ismerj meg minket"></Button>
+            <Theme :icon-only=false></Theme>
           </div>
         </div>
-        <!--<div class="w-2/6 flex flex-row justify-center content-center items-center flex-wrap gap-5">
 
-        </div>-->
       </div>
     </section>
 
@@ -75,7 +80,7 @@ const processedSvg = computed(() => {
     </section>
 
 
-    <section class="relative w-full h-screen overflow-hidden">
+    <section class="relative w-full h-screen overflow-hidden dark:bg-zinc-950">
       <div class="relative flex flex-row justify-center items-center w-full h-full gap-20">
         <div v-html="processedSvg.blueFin" class="absolute bottom-[-75%] left-0 w-full h-full"></div>
         <div v-html="processedSvg.lightYellowFin" class="absolute top-0 right-[-70%] w-full h-full"></div>
@@ -94,7 +99,7 @@ const processedSvg = computed(() => {
     </section>
 
 
-    <section class="relative w-full h-screen bg-gray-200">
+    <section class="relative w-full h-screen dark:bg-zinc-950">
       <div class="relative flex flex-col justify-center items-center w-full h-full">
         <div class="flex flex-row justify-center content-center items-center gap-20">
           <div class="logo w-[20rem] h-[20rem]">
@@ -104,10 +109,15 @@ const processedSvg = computed(() => {
             <div class="flex flex-col justify-center content-start items-start gap-5">
               <h3 class="text-3xl">Jelentkezz bátran!</h3>
               <h3 class="text-3xl">Eseményeinken szívesen látunk</h3>
+              <div class="flex flex-row justify-center content-center items-center gap-5">
+                <Button rank="primary" size="normal" icon-position="none" text="Képzéseink" :onClick="()=> router.push('/trainings')"></Button>
+                <Button rank="secondary" size="normal" icon-position="none" text="Events" :onClick="()=> router.push('/events')"></Button>
+              </div>
             </div>
             <div class="flex flex-col justify-center content-start items-start gap-5">
               <h3 class="text-3xl">Danubia iroda:</h3>
               <h3 class="text-3xl">+367012345</h3>
+              <Button rank="secondary" size="normal" icon-position="none" text="Kapcsolatok" :onClick="()=> router.push('/contacts')"></Button>
             </div>
           </div>
         </div>

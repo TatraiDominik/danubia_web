@@ -8,7 +8,7 @@ interface NavLink{
   route: string
 }
 const navlinks = ref<NavLink[]>([
-  { name: "Kezdőlap", route: 'homeView' },
+  { name: "Kezdőlap", route: '' },
   { name: "Események", route: 'events' },
   { name: "Képzéseink", route: 'trainings' },
   { name: "Oktatóink", route: 'instructors' },
@@ -19,8 +19,8 @@ const navlinks = ref<NavLink[]>([
 <template>
   <div class="flex flex-row justify-between content-center items-center p-2 dark:text-zinc-100 w-full">
     <div class="flex flex-row justify-start content-center items-center gap-5 w-full">
-      <RouterLink to="/homeView">
-        <Icon type="home" size="base" class="p-2 rounded-md bg-blue-600 text-zinc-300"></Icon>
+      <RouterLink to="/">
+        <Icon type="home" size="base" class="p-2 min-w-10 rounded-md bg-blue-600 flex flex-col justify-center content-center items-center text-zinc-300"></Icon>
       </RouterLink>
       <RouterLink v-for="(navlink, key) in navlinks" :key="key" :to="`/${navlink.route}`">{{ navlink.name }}</RouterLink>
     </div>
