@@ -58,10 +58,10 @@ button {
 }
 
 .tabItem {
-  @apply bg-zinc-700 hover:bg-zinc-600 active:bg-zinc-800 transition duration-200;
+  @apply hover:bg-zinc-700 active:bg-zinc-100 transition duration-200 rounded-full text-zinc-100;
 }
 
 .tabItem.active {
-  @apply bg-zinc-800;
+  @apply bg-zinc-200 text-zinc-900;
 }
 </style>

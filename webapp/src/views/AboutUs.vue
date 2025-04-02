@@ -1,10 +1,59 @@
 <script lang="ts" setup>
   import Icon from '@/components/global/Icon.vue';
+  import TabControl from '@/components/TabControl.vue';
+  import { onMounted } from 'vue';
+  import { useRoute, useRouter } from 'vue-router';
+
+  const router = useRouter();
+  const route = useRoute();
+
+  onMounted(() => {
+  if (route.path === '/aboutus') {
+    router.push('/aboutus/introduction');
+  }
+});
 </script>
 <template>
-<div class="flex flex-col justify-center content-center items-center w-full h-full">
-  <h3 class="text-3xl">This is "About us"</h3>
-  <h3 class="text-lg text-red-500">This page is under construction</h3>
-  <Icon type="settings" size="lg" class="text-red-500"></Icon>
+<div class="flex flex-col justify-start content-start items-start w-full h-full">
+  <TabControl class="mt-5 ml-5" :items="[{
+    buttonText: 'Bemutatkozás',
+    buttonSize: 'small',
+    buttonRank: 'tabItem',
+    buttonIconPosition: 'none',
+    event: () => router.push('/aboutus/introduction'),
+  },
+  {
+    buttonText: 'Munktársak',
+    buttonSize: 'small',
+    buttonRank: 'tabItem',
+    buttonIconPosition: 'none',
+    event: () => router.push('/aboutus/coworkers'),
+  },
+  {
+    buttonText: 'Vezetőség',
+    buttonSize: 'small',
+    buttonRank: 'tabItem',
+    buttonIconPosition: 'none',
+    event: () => router.push('/aboutus/management'),
+  },
+  {
+    buttonText: 'Pályázatok',
+    buttonSize: 'small',
+    buttonRank: 'tabItem',
+    buttonIconPosition: 'none',
+    event: () => router.push('/aboutus/applications'),
+  },
+  {
+    buttonText: 'Közérdekű adatok',
+    buttonSize: 'small',
+    buttonRank: 'tabItem',
+    buttonIconPosition: 'none',
+    event: () => router.push('/aboutus/pubinterestdata'),
+  },
+  ]"></TabControl>
+
+    <div class="w-full h-full flex justify-start content-start items-start">
+      <RouterView></RouterView>
+    </div>
 </div>
 </template>

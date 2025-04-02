@@ -27,7 +27,32 @@ const router = createRouter({
     {
       path: '/aboutus',
       name: 'About us',
-      component: () => import("@/views/AboutUs.vue")
+      component: () => import("@/views/AboutUs.vue"),
+      children:[
+        {
+          path:'introduction',
+          name:"Introduction",
+          component: () => import("@/views/aboutUs/Introduction.vue")
+        },
+        {
+          path:'coworkers',
+          name:'Co-workers',
+          component: () => import("@/views/aboutUs/CoWorkers.vue")
+        },
+        {
+          path:'management',
+          name:'Management',
+          component: () => import("@/views/aboutUs/Management.vue")
+        },        {
+          path:'applications',
+          name:'Applicatons',
+          component: () => import("@/views/aboutUs/Applications.vue")
+        },        {
+          path:'pubinterestdata',
+          name:'Public interest data',
+          component: () => import("@/views/aboutUs/PubInterestData.vue")
+        },
+      ]
     },
     {
       path: '/contacts',

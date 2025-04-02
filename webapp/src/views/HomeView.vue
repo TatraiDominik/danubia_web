@@ -85,12 +85,17 @@ const processedSvg = computed(() => {
         <div v-html="processedSvg.blueFin" class="absolute bottom-[-75%] left-0 w-full h-full"></div>
         <div v-html="processedSvg.lightYellowFin" class="absolute top-0 right-[-70%] w-full h-full"></div>
         <div v-html="processedSvg.darkYellowFin" class="absolute bottom-[-65%] right-[-80%] w-full h-full"></div>
-        <div class="flex flex-col justify-center content-start items-start w-1/4 ">
-          <h3 class="text-4xl dark:text-zinc-100">Célunk</h3>
-          <p class="text-lg font-[600] dark:text-zinc-100 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum saepe optio dolorum voluptas labore at quas, enim voluptatum suscipit quod nihil animi mollitia dolor eos? Consectetur incidunt tenetur provident rerum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum saepe optio dolorum voluptas labore at quas, enim voluptatum suscipit quod nihil animi mollitia dolor eos? Consectetur incidunt tenetur provident rerum?</p>
+        <div class="flex flex-col justify-center content-start items-start w-1/4 gap-5">
+          <h3 class="text-4xl dark:text-zinc-100">Iskolatörténet</h3>
+          <p class="text-lg font-[600] dark:text-zinc-100 text-justify">
+            Intézményünk az országban tizenhatodik magánfenntartású zeneiskolaként, bajai fenntartói és igazgatási székhellyel a Baja környéki kistelepüléseken 1994 szeptemberében kezdte meg működését.
+            A közoktatási feladatokat ellátó Magánzeneiskola azon vidéki tanulók részére jött létre, akik addig földrajzi, illetve szociális helyzetükből adódóan nem vehettek részt alapfokú zeneoktatásban.
+            1996-tól az iskola megkezdte a nem zenei (képző- és iparművészeti, színművészeti és táncművészeti) tárgyak  oktatását.
+            A 2000/2001. tanévtől Danubia Alapfokú Művészeti Iskola néven Baján is megindult az alapfokú művészetoktatás.
+          </p>
         </div>
         <h3 class="text-4xl dark:text-zinc-100">-</h3>
-        <div class="flex flex-col justify-center content-center items-center z-[100]">
+        <div class="flex flex-col justify-center content-center items-center gap-5 z-[100]">
           <div class="principle w-[20rem] h-[20rem] rounded-full"><!--Principle--></div>
           <h3 class="text-4xl dark:text-zinc-100">Petővári László</h3>
           <h3 class="text-3xl dark:text-zinc-100">Az intézmény vezetője</h3>
