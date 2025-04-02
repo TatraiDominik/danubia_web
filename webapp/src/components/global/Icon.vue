@@ -34,7 +34,9 @@ const icons: Record<string, string> = {
   id_card: "id_card",
   logout: "logout",
   undo: "undo",
-  home: 'home'
+  home: 'home',
+  dark_mode:'dark_mode',
+  light_mode:'light_mode',
 };
 </script>
 
