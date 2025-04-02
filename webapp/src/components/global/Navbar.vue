@@ -13,7 +13,8 @@ const navlinks = ref<NavLink[]>([
   { name: "Képzéseink", route: 'trainings' },
   { name: "Oktatóink", route: 'instructors' },
   { name: "Rólunk", route: 'aboutus/introduction' },
-  { name: "Kapcsolatak", route: 'contacts' }
+  { name: "Kapcsolatak", route: 'contacts' },
+  { name: "Szülők figyelmébe", route: 'forparents' },
 ]);
 </script>
 <template>
