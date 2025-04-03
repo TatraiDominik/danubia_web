@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
-import Button from './global/Button.vue';
+import Button from '../global/Button.vue';
 import { onMounted } from 'vue';
 
 const props = defineProps<{

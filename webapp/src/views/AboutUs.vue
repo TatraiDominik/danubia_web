@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-  import Icon from '@/components/global/Icon.vue';
-  import TabControl from '@/components/TabControl.vue';
+  import TabControl from '../components/global/TabControl.vue';
   import { onMounted } from 'vue';
   import { useRoute, useRouter } from 'vue-router';
 

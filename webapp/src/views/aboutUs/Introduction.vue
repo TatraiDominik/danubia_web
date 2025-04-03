@@ -25,7 +25,7 @@ const settlements = [
 </script>
 
 <template>
-  <div class="flex flex-col justify-center items-center w-full">
+  <div class="flex flex-col justify-center items-center w-full dark:bg-zinc-950">
 
     <div class="flex flex-col justify-center items-center gap-20 w-full h-screen">
       <h3 class="text-3xl">Az intézményről</h3>
@@ -62,7 +62,7 @@ const settlements = [
       </div>
     </div>
 
-    <div class="flex flex-col justify-center items-center w-full h-screen dark:bg-zinc-950">
+    <div class="flex flex-col justify-center items-center w-full h-screen dark:bg-zinc-950 px-20">
       <div class="flex flex-row justify-around content-center items-center h-full gap-20">
         <div class="flex flex-col justify-center content-start items-start h-full w-1/2 gap-5">
           <h3 >

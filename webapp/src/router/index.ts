@@ -76,12 +76,34 @@ const router = createRouter({
           next('/adminlogin');
         }
       },
+      children:[
+        {
+          path:'posts',
+          name:'Posts',
+          component: ()=> import('@/views/admin/Post.vue')
+        },
+        {
+          path:'instructor',
+          name:'Instructor',
+          component: ()=> import('@/views/admin/Instructor.vue')
+        },
+        {
+          path:'coworker',
+          name:'Co-worker',
+          component: ()=> import('@/views/admin/CoWorker.vue')
+        },
+      ]
     },
     {
       path: '/adminlogin',
       name: 'Admin login',
       component: () => import("@/views/AdminLogin.vue"),
     },
+    {
+      path:'/forparents',
+      name:"For parents",
+      component: () => import("@/views/ForParents.vue")
+    }
   ],
 });
 
