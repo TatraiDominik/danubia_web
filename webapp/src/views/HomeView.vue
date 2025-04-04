@@ -46,9 +46,9 @@ const processedSvg = computed(() => {
       <div class="darkYellow absolute right-[17%] top-0 w-[35%] h-[35%] z-[-1]"><!--Circle--></div>
       <div class="relative flex flex-col justify-center content-center items-center w-full h-full gap-5">
 
-        <div class="relative flex flex-col justify-center w-[60%] h-[60%] content-center items-center z-10 text-zinc-100 dark:text-zinc-100 gap-10 name">
+        <div class="relative flex flex-col justify-center md:w-[60%] md:h-[60%] w-full content-center items-center z-10 text-zinc-100 dark:text-zinc-100 gap-10 name">
 
-          <div class="flex flex-col justify-center content-start items-start gap-2">
+          <div class="flex flex-col justify-center content-start items-start gap-2 ami">
             <h3 class="2xl:text-6xl xl:text-5xl lg:text-5xl md:text-4xl sm:homeText text-4xl">Danubia</h3>
             <h3 class="2xl:text-6xl xl:text-5xl lg:text-5xl md:text-4xl sm:homeText text-4xl">Alapfokú</h3>
             <h3 class="2xl:text-6xl xl:text-5xl lg:text-5xl md:text-4xl sm:homeText text-4xl">Művészeti Iskola</h3>
@@ -149,6 +149,21 @@ const processedSvg = computed(() => {
   background-size: contain;
   background-repeat: no-repeat;
 }
+@media only screen and (max-width: 450px) {
+  .name{
+    background-image: none;
+    @apply bg-blue-500 py-4;
+  }
+  .ami{
+    @apply items-center content-center text-center
+  }
+}
+@media only screen and (min-width: 450px) {
+  .name{
+    @apply h-full
+  }
+
+}
 .lightYellow{
   background-image: url("../assets/svgs/home/light_yellow_circle.svg");
   background-position: center;
@@ -186,6 +201,6 @@ const processedSvg = computed(() => {
   background-repeat: no-repeat;
 }
 .homeText{
-  @apply text-xl sm:text-2xl md:text-3xl xl:text-3xl 2xl:text-3xl text-zinc-900 dark:text-zinc-100 z-50
+  @apply text-xl sm:text-2xl md:text-3xl xl:text-3xl 2xl:text-3xl  dark:text-zinc-100 z-50
 }
 </style>
