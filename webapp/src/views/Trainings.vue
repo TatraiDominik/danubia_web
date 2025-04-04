@@ -1,16 +1,10 @@
+<script lang="ts" setup>
+  import Icon from '@/components/global/Icon.vue';
+</script>
 <template>
-  <div class="flex flex-col justify-center content-center items-center w-full h-full">
-    <div class="training w-[60%] h-[20%] rounded-lg felx fle-col justify-end content-end items-start">
-      <h3 class="text-3xl">Néptánc</h3>
-      <h3 class="text-3xl">Baja - Vaskút - Szeremle</h3>
-    </div>
-  </div>
+<div class="flex flex-col justify-center content-center items-center w-full h-full">
+  <h3 class="text-3xl">This is "Trainings"</h3>
+  <h3 class="text-lg text-red-500">This page is under construction</h3>
+  <Icon type="settings" size="lg" class="text-red-500"></Icon>
+</div>
 </template>
-<style>
-.training{
-  background-image: url("../assets/pics/neptanc.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-</style>
