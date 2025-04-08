@@ -13,7 +13,7 @@
 });
 </script>
 <template>
-<div class="flex flex-col justify-start content-start items-start w-full h-full">
+<div class="flex flex-col justify-start content-start items-start w-full h-full min-h-screen">
   <TabControl class="mt-5 ml-5" :items="[{
     buttonText: 'Bemutatkozás',
     buttonSize: 'small',
@@ -50,9 +50,8 @@
     event: () => router.push('/aboutus/pubinterestdata'),
   },
   ]"></TabControl>
-
-    <div class="w-full h-full flex justify-start content-start items-start">
-      <RouterView></RouterView>
+    <div class="h-screen w-full overflow-hidden">
+      <RouterView />
     </div>
 </div>
 </template>

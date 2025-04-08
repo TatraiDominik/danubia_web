@@ -33,15 +33,11 @@ const processedSvg = computed(() => {
 
 <template>
   <div class="w-full h-full bg-zinc-100 dark:bg-zinc-950">
-    <div class="absolute left-0 top-0 w-full h-screen">
-      <!--wave.svg-->
-      <div v-html="processedSvg.wave" class="absolute w-full h-full object-cover"></div>
 
 
-    </div>
-
-
-    <section class="relative w-full h-full">
+    <div class="overflow-y-scroll flex flex-col snap-mandatory snap-y scroll-container relative h-full w-full">
+      <div v-html="processedSvg.wave" class="absolute w-full h-full object-cover z-0"></div>
+      <section class="relative w-full min-h-full snap-center">
       <div class="lightYellow absolute left-[17%] top-1/2 w-[35%] h-[35%] z-[-1]"><!--Circle--></div>
       <div class="darkYellow absolute right-[17%] top-0 w-[35%] h-[35%] z-[-1]"><!--Circle--></div>
       <div class="relative flex flex-col justify-center content-center items-center w-full h-full gap-5">
@@ -61,26 +57,24 @@ const processedSvg = computed(() => {
         </div>
 
       </div>
-    </section>
+      </section>
 
-
-    <section class="relative w-full h-screen bg-blue-600 px-4">
-      <div class="layered absolute w-[80%] h-[80%] top-[15%] left-[-10%]"></div>
-      <div class="relative flex flex-col md:flex-row justify-center items-center w-full h-full gap-5 md:gap-20 ">
-        <div class="banner relative w-2/3 md:w-1/3 h-2/6 rounded-xl"></div>
-        <div class="flex flex-col justify-center content-start items-start gap-5 md:w-1/2 w-3/4">
-          <h3 class="homeText text-zinc-300 dark:text-zinc-100 w-full text-justify leading-relaxed">
-            Miként a Duna összeköti a különböző kultúrákat,
-            s a danubia szalag a ruha részeit egésszé egyesíti,
-            akként
-            a Danubia AMI jelképesen egybefogja a többnemzetiségű településeken folyó művészeti képzést.
-          </h3>
+      <section class="relative w-full min-h-screen bg-blue-600 px-4 snap-center">
+        <div class="layered absolute w-[80%] h-[80%] top-[15%] left-[-10%]"></div>
+        <div class="relative flex flex-col md:flex-row justify-center items-center w-full h-full gap-5 md:gap-20 ">
+          <div class="banner relative w-2/3 md:w-1/3 h-2/6 rounded-xl"></div>
+          <div class="flex flex-col justify-center content-start items-start gap-5 md:w-1/2 w-3/4">
+            <h3 class="homeText text-zinc-300 dark:text-zinc-100 w-full text-justify leading-relaxed">
+              Miként a Duna összeköti a különböző kultúrákat,
+              s a danubia szalag a ruha részeit egésszé egyesíti,
+              akként
+              a Danubia AMI jelképesen egybefogja a többnemzetiségű településeken folyó művészeti képzést.
+            </h3>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-
-    <section class="relative w-full h-screen overflow-hidden dark:bg-zinc-950">
+      <section class="relative w-full min-h-screen overflow-hidden dark:bg-zinc-950 snap-center">
       <div class="relative flex md:flex-row flex-col justify-center items-center w-full h-full py-4 gap-5 md:gap-20">
         <div v-html="processedSvg.blueFin" class="absolute bottom-[-75%] left-0 w-full h-full"></div>
         <div v-html="processedSvg.lightYellowFin" class="absolute top-0 right-[-70%] w-full h-full hidden md:block"></div>
@@ -108,12 +102,9 @@ const processedSvg = computed(() => {
           <h3 class="homeText dark:text-zinc-100">Az intézmény vezetője</h3>
         </div>
       </div>
-    </section>
+      </section>
 
-
-
-
-    <section class="relative w-full h-screen dark:bg-zinc-950">
+      <section class="relative w-full min-h-full h-full dark:bg-zinc-950 snap-center">
       <div class="relative flex flex-col justify-center items-center w-full h-full">
 
         <div class="flex flex-col md:flex-row justify-center items-center w-full h-full gap-5 md:gap-20">
@@ -139,7 +130,8 @@ const processedSvg = computed(() => {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </div>
   </div>
 </template>
 <style>
@@ -202,5 +194,14 @@ const processedSvg = computed(() => {
 }
 .homeText{
   @apply text-xl sm:text-2xl md:text-3xl xl:text-3xl 2xl:text-3xl  dark:text-zinc-100 z-50
+}
+.scroll-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+
+}
+.scroll-container::-webkit-scrollbar {
+  display: none;
 }
 </style>
