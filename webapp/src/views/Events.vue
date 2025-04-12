@@ -11,11 +11,13 @@ onMounted(async () => {
 </script>
 
 <template>
-<div class="flex flex-col justify-center content-center items-center w-full h-full">
+<div class="overflow-y-auto flex flex-col justify-center content-center items-center w-full h-full">
   <h3 class="text-3xl">This is "Events"</h3>
 
   <div v-if="postStore.posts.length > 0" class="w-full max-w-3xl mt-10">
     <div v-for="post in postStore.posts" :key="post._id" class="mb-6 p-4 border rounded shadow">
+      <img v-if="post.media" :src="`http://91.214.112.195:3001/danubia_api/file/${post.media}`" alt="Post image" class="w-full h-48 object-cover mb-4 rounded" />
+
       <h4 class="text-xl font-bold">{{ post.title }}</h4>
       <p class="mt-2">{{ post.content }}</p>
 
@@ -30,7 +32,7 @@ onMounted(async () => {
     </div>
   </div>
 
-  <div v-else class="mt-10">
+  <div v-else>
     <h3 class="text-lg text-red-500">Nincsenek események</h3>
     <Icon type="settings" size="lg" class="text-red-500 mt-4"></Icon>
   </div>
