@@ -8,7 +8,6 @@ export const useAdminStore = defineStore('admin', () => {
   const router = useRouter();
   const currentAdmin: Ref<Admin | null> = ref(null);
 
-  // Inicializáláskor betöltjük a localStorage-ból az admin adatokat
   function loadFromLocalStorage() {
     const storedAdmin = localStorage.getItem('admin');
     if (storedAdmin) {
@@ -80,7 +79,6 @@ export const useAdminStore = defineStore('admin', () => {
     return currentAdmin.value?.data;
   }
 
-  // Store inicializáláskor meghívjuk
   loadFromLocalStorage();
 
   return { login, loggedIn, getAdminData, getJwt, setJwt, clearAdmin, refreshAdminData };
