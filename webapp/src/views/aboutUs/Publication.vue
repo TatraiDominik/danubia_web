@@ -1,32 +1,34 @@
-
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
 
-// Fájlok tárolása
 const docs = ref<any[]>([]);
 
-// Beolvassuk a fájlokat az assets/docs mappából
-const docFiles = import.meta.glob('@/assets/docs/**/*', { eager: true });
+const docModules = import.meta.glob('@/assets/docs/**/*', { as: 'url' });
 
-onMounted(() => {
-  // A fájlok beolvasása és feldolgozása
-  for (const filePath in docFiles) {
-    const file = docFiles[filePath];
-    docs.value.push({
-      name: filePath.split('/').pop(), // A fájl neve
-      path: filePath // A fájl elérési útja
-    });
+onMounted(async () => {
+  for (const path in docModules) {
+    const fileName = path.split('/').pop() || '';
+
+    try {
+      const fileUrl = await docModules[path]();
+      docs.value.push({
+        name: fileName,
+        path: fileUrl
+      });
+    } catch (error) {
+      console.error(`Hiba a fájl betöltésekor: ${path}`, error);
+    }
   }
 });
 </script>
+
 <template>
-  <div class="flex flex-col justify-center content-center items-center gap-10 p-5 w-full h-ful dark:bg-zinc-950">
-    <h3 class="text-3xl">Közérdekű adatok</h3>
-    <div v-if="docs.length > 0" class="w-full max-w-4xl">
+  <div class="flex flex-col justify-start content-start items-start gap-10 p-5 w-full h-full dark:bg-zinc-950">
+    <h3 class="text-3xl">Közzététel</h3>
+    <div v-if="docs.length > 0" class="w-full">
       <div v-for="(file, index) in docs" :key="index" class="mb-4">
-        <!-- Fájl neve és letöltési link -->
-        <div class="flex justify-between items-center bg-gray-100 p-4 rounded-lg shadow-md hover:bg-gray-200 transition">
-          <p class="text-lg font-semibold text-gray-700 truncate max-w-[75%]">{{ file.name }}</p>
+        <div class="flex justify-between items-center bg-zinc-200 p-4 rounded-lg border border-zinc-300 dark:border-zinc-700 dark:bg-zinc-800 hover:bg-gray-200 dark:hover:bg-zinc-700 transition">
+          <p class="text-lg font-semibold text-gray-700 dark:text-gray-200 truncate max-w-[75%]">{{ file.name }}</p>
           <a
             :href="file.path"
             download
@@ -39,8 +41,7 @@ onMounted(() => {
       </div>
     </div>
     <div v-else>
-      <p class="text-gray-500">Nincsenek dokumentumok.</p>
+      <p class="text-gray-500 dark:text-gray-400">Nincsenek dokumentumok.</p>
     </div>
   </div>
 </template>
-
