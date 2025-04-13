@@ -14,8 +14,8 @@ onMounted(async () => {
 <div class="flex flex-col justify-center content-center items-center w-full h-full gap-10">
   <h3 class="text-3xl">Eseményeink</h3>
 
-  <div class="w-full">
-    <div v-for="post in postStore.posts" :key="post._id" class="mb-6 p-4 border rounded shadow">
+  <div class="w-5/6">
+    <div v-for="post in postStore.posts" :key="post._id" class="mb-6 p-4 border rounded-lg border-zinc-300 dark:border-zinc-700 bg-zinc-200 dark:bg-zinc-900">
       <img v-if="post.media" :src="`http://91.214.112.195:3001/danubia_api/file/${post.media}`" alt="Post image" class="w-full h-48 object-cover mb-4 rounded" />
 
       <h4 class="text-xl font-bold">{{ post.title }}</h4>
