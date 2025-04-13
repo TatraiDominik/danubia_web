@@ -15,7 +15,7 @@ const navlinks = ref<NavLink[]>([
   { name: "Rólunk", route: 'aboutus/introduction' },
   { name: "Kapcsolatak", route: 'contacts' },
   { name: "Szülők figyelmébe", route: 'forparents' },
-  { name: "Rólunk", route: 'aboutus/pubinterestdata' },
+  { name: "Közzététel", route: 'aboutus/publication' },
 ]);
 
 const mobileMenuOpen = ref(false);

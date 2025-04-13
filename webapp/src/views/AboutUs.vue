@@ -1,57 +1,73 @@
 <script lang="ts" setup>
-  import TabControl from '../components/global/TabControl.vue';
-  import { onMounted } from 'vue';
-  import { useRoute, useRouter } from 'vue-router';
+import TabControl from '../components/global/TabControl.vue';
+import { computed } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 
-  const router = useRouter();
-  const route = useRoute();
+const router = useRouter();
+const route = useRoute();
 
-  onMounted(() => {
-  if (route.path === '/aboutus') {
-    router.push('/aboutus/introduction');
-  }
+const activeTabIndex = computed(() => {
+  const path = route.path;
+
+  if (path.includes('/aboutus/introduction')) return 0;
+  if (path.includes('/aboutus/coworkers')) return 1;
+  if (path.includes('/aboutus/management')) return 2;
+  if (path.includes('/aboutus/applications')) return 3;
+  if (path.includes('/aboutus/publication')) return 4;
+
+  return 0;
 });
+
+if (route.path === '/aboutus') {
+  router.push('/aboutus/introduction');
+}
 </script>
+
 <template>
 <div class="flex flex-col justify-start content-start items-start w-full h-full min-h-screen">
-  <TabControl class="mt-5 ml-5" :items="[{
-    buttonText: 'Bemutatkozás',
-    buttonSize: 'small',
-    buttonRank: 'tabItem',
-    buttonIconPosition: 'none',
-    event: () => router.push('/aboutus/introduction'),
-  },
-  {
-    buttonText: 'Munktársak',
-    buttonSize: 'small',
-    buttonRank: 'tabItem',
-    buttonIconPosition: 'none',
-    event: () => router.push('/aboutus/coworkers'),
-  },
-  {
-    buttonText: 'Vezetőség',
-    buttonSize: 'small',
-    buttonRank: 'tabItem',
-    buttonIconPosition: 'none',
-    event: () => router.push('/aboutus/management'),
-  },
-  {
-    buttonText: 'Pályázatok',
-    buttonSize: 'small',
-    buttonRank: 'tabItem',
-    buttonIconPosition: 'none',
-    event: () => router.push('/aboutus/applications'),
-  },
-  {
-    buttonText: 'Közérdekű adatok',
-    buttonSize: 'small',
-    buttonRank: 'tabItem',
-    buttonIconPosition: 'none',
-    event: () => router.push('/aboutus/pubinterestdata'),
-  },
-  ]"></TabControl>
-    <div class="h-screen w-full overflow-hidden">
-      <RouterView />
-    </div>
+  <TabControl
+    class="mt-5 ml-5"
+    :activeTabIndex="activeTabIndex"
+    :items="[{
+      buttonText: 'Bemutatkozás',
+      buttonSize: 'small',
+      buttonRank: 'tabItem',
+      buttonIconPosition: 'none',
+      event: () => router.push('/aboutus/introduction'),
+    },
+    {
+      buttonText: 'Munktársak',
+      buttonSize: 'small',
+      buttonRank: 'tabItem',
+      buttonIconPosition: 'none',
+      event: () => router.push('/aboutus/coworkers'),
+    },
+    {
+      buttonText: 'Vezetőség',
+      buttonSize: 'small',
+      buttonRank: 'tabItem',
+      buttonIconPosition: 'none',
+      event: () => router.push('/aboutus/management'),
+    },
+    {
+      buttonText: 'Pályázatok',
+      buttonSize: 'small',
+      buttonRank: 'tabItem',
+      buttonIconPosition: 'none',
+      event: () => router.push('/aboutus/applications'),
+    },
+    {
+      buttonText: 'Közzététel',
+      buttonSize: 'small',
+      buttonRank: 'tabItem',
+      buttonIconPosition: 'none',
+      event: () => router.push('/aboutus/publication'),
+    },
+    ]"
+  ></TabControl>
+
+  <div class="h-screen w-full overflow-hidden">
+    <RouterView />
+  </div>
 </div>
 </template>

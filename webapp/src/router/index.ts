@@ -60,9 +60,9 @@ const router = createRouter({
           meta: { public: false },
         },
         {
-          path: 'pubinterestdata',
-          name: 'Public interest data',
-          component: () => import("@/views/aboutUs/PubInterestData.vue"),
+          path: 'publication',
+          name: 'Publication',
+          component: () => import("@/views/aboutUs/Publication.vue"),
           meta: { public: false },
         },
       ],
