@@ -13,7 +13,7 @@
 <template>
         <div class="overflow-y-auto w-full h-full flex flex-col justify-start content-center items-center gap-10">
           <h3 class="text-4xl">Vezetőség</h3>
-          <div class="flex flex-col gap-4">
+          <div class="flex flex-col w-full gap-4">
             <div v-for="coworker in coworkerStore.coworkers" :key="coworker._id" class="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md">
               <div class="flex flex-col md:flex-row gap-4">
                 <div class="flex-shrink-0">
