@@ -24,7 +24,7 @@ if (route.path === '/aboutus') {
 </script>
 
 <template>
-<div class="flex flex-col justify-start content-start items-start w-full h-full min-h-screen">
+<div class="flex flex-col justify-start content-start items-start w-full h-full">
   <TabControl
     class="mt-5 ml-5"
     :activeTabIndex="activeTabIndex"
@@ -65,9 +65,6 @@ if (route.path === '/aboutus') {
     },
     ]"
   ></TabControl>
-
-  <div class="h-screen w-full overflow-hidden">
-    <RouterView />
-  </div>
+  <RouterView class="w-full h-full" />
 </div>
 </template>

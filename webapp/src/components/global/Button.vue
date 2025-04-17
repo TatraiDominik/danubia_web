@@ -58,7 +58,7 @@ button {
 }
 
 .tabItem {
-  @apply hover:bg-zinc-700 active:bg-zinc-100 transition duration-200 rounded-full text-zinc-100;
+  @apply hover:bg-zinc-700 active:bg-zinc-100 transition duration-200 rounded-full text-zinc-100 sm:text-base text-sm;
 }
 
 .tabItem.active {

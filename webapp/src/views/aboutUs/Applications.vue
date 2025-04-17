@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-center items-center gap-10 p-10 w-full bg-white dark:bg-zinc-950">
+  <div class="flex flex-col justify-start content-center items-center gap-10 p-10 bg-white dark:bg-zinc-950 w-full h-full">
     <section class="max-w-4xl mx-auto">
       <h3 class="text-3xl font-bold text-center mb-4">A pályázati támogatás felhasználása</h3>
       <p class="text-base mb-6">

@@ -1,10 +1,10 @@
 <template>
-  <div class="flex flex-col justify-center content-center items-center gap-20 text-zinc-900 dark:text-zinc-100 dark:bg-zinc-950 p-20">
-    <h3 class="text-4xl font-bold text-center ">Szülők figyelmébe</h3>
+  <div class="flex flex-col justify-start content-center items-center gap-20 text-zinc-900 dark:text-zinc-100 dark:bg-zinc-950 p-20 w-full h-full">
+    <h3 class="text-4xl font-bold text-center">Szülők figyelmébe</h3>
 
     <div class="flex flex-col justify-center content-center items-center gap-10">
       <h3 class="text-3xl font-semibold text-center ">A TANULÓK ELŐMENETELE</h3>
-      <p class="text-base text-justify text-gray-300">
+      <p class="text-base text-justify w-full">
         Az e-kreta.hu adminisztrációs rendszer teljes körű információt biztosít tanulóink előmeneteléről.
         (Az egyéni oktatás során biztosítunk hagyományos papíralapú kommunikációs lehetőséget is “tájékoztató füzet” segítségével.)
         Ha már beiratkozott gyermeke, de Ön még nem rendelkezik e-kérta szülői fiókkal, kérjük, adja meg az e célra szánt ímélcímét a <a href="mailto:danubiaiskola@gmail.com" class="text-blue-400 underline">danubiaiskola@gmail.com</a> címen, feltüntetve az érintett tanuló, illetve tanulók nevét és tanulóazonosítóját.
@@ -48,9 +48,9 @@
       </p>
     </div>
 
-    <div class="flex flex-col justify-items-center content-center items-center gap-10">
+    <div class="flex flex-col justify-center content-center items-center gap-10">
       <h2 class="text-2xl font-semibold ">Országos, nemzetközi és egyéb szakmai bemutatók</h2>
-      <ul class="list-disc pl-5 text-gray-300">
+      <ul class="list-disc pl-5 ">
         <li>2023.10.30. Budapest, Gitár Centrum, Bodor Máté Masterclass, Kincs János döntős (Északi Szabolcs)</li>
         <li>2023.10.23. Baja, La Grande Lessive Nemzetközi képzőművészeti akció (Majorcsicsné Ujjady Krisztina)</li>
         <li>2023.11.18. Csantavér (SRB), Nemzetközi tamburafesztivál: Danubia AMI tamburazenekara (Csurai Attila)</li>
@@ -58,21 +58,21 @@
       </ul>
 
       <h2 class="text-2xl font-semibold  mt-10">Megyei, területi szakmai bemutatók</h2>
-      <ul class="list-disc pl-5 text-gray-300">
+      <ul class="list-disc pl-5 ">
         <li>2024.05.11. Miske, Néptánc Együttesek Találkozója: Danubia AMI Nádikó ifjúsági csoport (Kővágó Zsolt)</li>
         <li>2024.04.05. Baja, Kultúrpalota, III. Tüzet viszek népdaléneklési verseny, vármegyei forduló: Hegyi Zselyke ezüst minősítés (Pencz Andrea)</li>
         <li>2024.03.10. Kecskemét, Megyei Fúvószenekari Találkozó – Danubia AMI Fúvószenekar (Nagy Gábor)</li>
       </ul>
 
       <h2 class="text-2xl font-semibold  mt-10">Helyi kulturális szerepvállalás</h2>
-      <ul class="list-disc pl-5 text-gray-300">
+      <ul class="list-disc pl-5 ">
         <li>2024.08.31. Szakmár Falunap - Nádikó Ifjúsági és kisiskolás csoportok (Kővágó Zsolt)</li>
         <li>2024.06.01. Újtelek Falunap - Nádikó Ifjúsági és kisiskolás csoportok (Kővágó Zsolt)</li>
         <li>2024.05.20. Baja, Városi Ünnepség – Danubia AMI kórus és fúvószenekar (Kórusvezető: Kiss Edit, Zenekarvezető: Nagy Gábor)</li>
       </ul>
 
       <h2 class="text-2xl font-semibold  mt-10">Országos, nemzetközi és egyéb versenyek</h2>
-      <ul class="list-disc pl-5 text-gray-300">
+      <ul class="list-disc pl-5 ">
         <li>2023.11.20. Debrecen, Országos gitárverseny, 2. helyezés – Kincs János</li>
         <li>2023.12.15. Pécs, Országos Fúvósverseny, 3. helyezés – Danubia AMI (Nagy Gábor)</li>
         <li>2024.03.10. Budapest, XII. Nemzetközi Táncfesztivál, 1. helyezés – Danubia AMI táncosai (Kővágó Zsolt)</li>

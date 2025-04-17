@@ -29,7 +29,7 @@ watch(() => props.activeTabIndex, (newValue) => {
 </script>
 
 <template>
-  <div class="flex flex-row justify-evenly content-center items-center bg-zinc-800 p-1 rounded-full gap-3">
+  <div class="flex flex-row justify-evenly content-center items-center bg-zinc-800 rounded-full gap-1 sm:gap-3 py-1 px-2">
     <Button
       v-for="(item, index) in props.items"
       :key="index"
@@ -39,6 +39,7 @@ watch(() => props.activeTabIndex, (newValue) => {
       :icon-position="item.buttonIconPosition"
       :isActive="internalActiveTabIndex === index"
       @click.prevent="() => { selectTab(index); item.event?.(); }"
+      class="my-1"
     ></Button>
   </div>
 </template>
