@@ -10,7 +10,6 @@ interface NavLink{
 const navlinks = ref<NavLink[]>([
   { name: "Kezdőlap", route: '' },
   { name: "Események", route: 'events' },
-  { name: "Képzéseink", route: 'trainings' },
   { name: "Oktatóink", route: 'instructors' },
   { name: "Rólunk", route: 'aboutus/introduction' },
   { name: "Kapcsolatak", route: 'contacts' },

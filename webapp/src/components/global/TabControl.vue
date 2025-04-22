@@ -77,7 +77,7 @@ const getActiveTabText = () => {
     <!-- Lenyíló menü -->
     <div
       v-if="isMobileMenuOpen"
-      class="absolute top-full left-0 right-0 mt-1 bg-zinc-800 rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto"
+      class="bg-zinc-800 rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto"
     >
       <div
         v-for="(item, index) in props.items"
@@ -93,8 +93,5 @@ const getActiveTabText = () => {
 </template>
 
 <style scoped>
-.absolute {
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  transform-origin: top center;
-}
+
 </style>

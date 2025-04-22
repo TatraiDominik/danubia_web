@@ -24,47 +24,49 @@ if (route.path === '/aboutus') {
 </script>
 
 <template>
-<div class="flex flex-col justify-start content-start items-start w-full h-full">
-  <TabControl
-    class="mt-5 ml-5"
-    :activeTabIndex="activeTabIndex"
-    :items="[{
-      buttonText: 'Bemutatkozás',
-      buttonSize: 'small',
-      buttonRank: 'tabItem',
-      buttonIconPosition: 'none',
-      event: () => router.push('/aboutus/introduction'),
-    },
-    {
-      buttonText: 'Munktársak',
-      buttonSize: 'small',
-      buttonRank: 'tabItem',
-      buttonIconPosition: 'none',
-      event: () => router.push('/aboutus/coworkers'),
-    },
-    {
-      buttonText: 'Vezetőség',
-      buttonSize: 'small',
-      buttonRank: 'tabItem',
-      buttonIconPosition: 'none',
-      event: () => router.push('/aboutus/management'),
-    },
-    {
-      buttonText: 'Pályázatok',
-      buttonSize: 'small',
-      buttonRank: 'tabItem',
-      buttonIconPosition: 'none',
-      event: () => router.push('/aboutus/applications'),
-    },
-    {
-      buttonText: 'Közzététel',
-      buttonSize: 'small',
-      buttonRank: 'tabItem',
-      buttonIconPosition: 'none',
-      event: () => router.push('/aboutus/publication'),
-    },
-    ]"
-  ></TabControl>
-  <RouterView class="w-full h-full" />
+<div class="flex flex-col justify-start content-start items-start w-full h-full relative">
+  <div class="absolute top-3 left-3">
+    <TabControl
+
+:activeTabIndex="activeTabIndex"
+:items="[{
+  buttonText: 'Bemutatkozás',
+  buttonSize: 'small',
+  buttonRank: 'tabItem',
+  buttonIconPosition: 'none',
+  event: () => router.push('/aboutus/introduction'),
+},
+{
+  buttonText: 'Munktársak',
+  buttonSize: 'small',
+  buttonRank: 'tabItem',
+  buttonIconPosition: 'none',
+  event: () => router.push('/aboutus/coworkers'),
+},
+{
+  buttonText: 'Vezetőség',
+  buttonSize: 'small',
+  buttonRank: 'tabItem',
+  buttonIconPosition: 'none',
+  event: () => router.push('/aboutus/management'),
+},
+{
+  buttonText: 'Pályázatok',
+  buttonSize: 'small',
+  buttonRank: 'tabItem',
+  buttonIconPosition: 'none',
+  event: () => router.push('/aboutus/applications'),
+},
+{
+  buttonText: 'Közzététel',
+  buttonSize: 'small',
+  buttonRank: 'tabItem',
+  buttonIconPosition: 'none',
+  event: () => router.push('/aboutus/publication'),
+},
+]"
+    ></TabControl>
+  </div>
+  <RouterView class="w-full h-full mt-20" />
 </div>
 </template>

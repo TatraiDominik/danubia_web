@@ -18,12 +18,6 @@ const router = createRouter({
       meta: { public: false },
     },
     {
-      path: '/trainings',
-      name: 'Trainings',
-      component: () => import("@/views/Trainings.vue"),
-      meta: { public: false },
-    },
-    {
       path: '/instructors',
       name: 'Instructors',
       component: () => import("@/views/Instructors.vue"),
