@@ -41,9 +41,9 @@ export const useCoworkerStore = defineStore('coworker', () => {
           });
         }
         formData.append('email', coworkerData.email);
-        formData.append('mobile', coworkerData.mobile);
-        if (coworkerData.facebook) formData.append('facebook', coworkerData.facebook);
-        if (coworkerData.instagram) formData.append('instagram', coworkerData.instagram);
+        if (coworkerData.mobile) formData.append('mobile', coworkerData.mobile as string);
+        if (coworkerData.facebook) formData.append('facebook', coworkerData.facebook as string);
+        if (coworkerData.instagram) formData.append('instagram', coworkerData.instagram as string);
         formData.append('file', file);
 
         const response = await ApiWrapper.post('/coworker', formData, {
@@ -74,9 +74,9 @@ export const useCoworkerStore = defineStore('coworker', () => {
           });
         }
         if (coworkerData.email) formData.append('email', coworkerData.email);
-        if (coworkerData.mobile) formData.append('mobile', coworkerData.mobile);
-        if (coworkerData.facebook) formData.append('facebook', coworkerData.facebook);
-        if (coworkerData.instagram) formData.append('instagram', coworkerData.instagram);
+        if (coworkerData.mobile) formData.append('mobile', coworkerData.mobile as string);
+        if (coworkerData.facebook) formData.append('facebook', coworkerData.facebook as string);
+        if (coworkerData.instagram) formData.append('instagram', coworkerData.instagram as string);
         formData.append('file', file);
 
         const response = await ApiWrapper.put(`/coworker/${id}`, formData, {
