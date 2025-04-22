@@ -11,15 +11,15 @@
 });
 </script>
 <template>
-        <div class="overflow-y-auto w-full h-full flex flex-col justify-start content-center items-center gap-10">
-          <h3 class="text-4xl">Vezetőség</h3>
+        <div class="overflow-y-auto w-full h-full flex flex-col justify-start content-center items-center gap-10 px-4 py-2">
+          <h3 class="text-4xl">Intézményvezetés</h3>
           <div class="flex flex-col justify-start content-start items-start w-full h-full gap-4">
       <div
         v-for="coworker in coworkerStore.coworkers"
         :key="coworker._id"
         class="bg-white dark:bg-zinc-900 p-4 rounded-lg shadow-md w-fit ml-0 mr-auto md:w-auto md:max-w-full"
       >
-        <div class="flex flex-col md:flex-row gap-4 items-start">
+        <div class="flex flex-col gap-4 items-start">
           <!-- Kép -->
           <div class="md:mx-0">
             <img

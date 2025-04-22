@@ -37,14 +37,14 @@ if (route.path === '/aboutus') {
   event: () => router.push('/aboutus/introduction'),
 },
 {
-  buttonText: 'Munktársak',
+  buttonText: 'Oktatást segítő munkatársak',
   buttonSize: 'small',
   buttonRank: 'tabItem',
   buttonIconPosition: 'none',
   event: () => router.push('/aboutus/coworkers'),
 },
 {
-  buttonText: 'Vezetőség',
+  buttonText: 'Intézményvezetés',
   buttonSize: 'small',
   buttonRank: 'tabItem',
   buttonIconPosition: 'none',
