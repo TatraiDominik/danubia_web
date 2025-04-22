@@ -13,7 +13,11 @@
           Ha már beiratkozott gyermeke, de Ön még nem rendelkezik e-kérta szülői fiókkal, kérjük, adja meg az e célra szánt ímélcímét a <a href="mailto:danubiaiskola@gmail.com" class="text-blue-400 underline">danubiaiskola@gmail.com</a> címen, feltüntetve az érintett tanuló, illetve tanulók nevét és tanulóazonosítóját.
           Így fiókja hamarosan elkészül.
         </p>
+
+
+
       </div>
+      <a href="https://forms.gle/uthxhP1CCgoupLsZ8" target="_blank" class="text-xl font-semibold text-center text-blue-600 underline">Online beiratkozás a 2025-2026. tanévre</a>
     </div>
 
     <div class="flex flex-col justify-center content-center items-center gap-6 md:gap-10 w-full">
