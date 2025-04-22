@@ -10,8 +10,8 @@ const coworkerStore = useCoworkerStore();
 const loading = ref(true);
 const error = ref<string | null>(null);
 
-const institutionLeadershipCoworkers = computed(() => {
-  return coworkerStore.coworkers.filter(coworker => coworker.type === CoWorkerType.INSTITUTION_LEADERSHIP);
+const regularCoworkers = computed(() => {
+  return coworkerStore.coworkers.filter(coworker => coworker.type === CoWorkerType.REGULAR);
 });
 
 onMounted(async () => {
@@ -19,16 +19,16 @@ onMounted(async () => {
     await coworkerStore.getAllCoworkers();
     loading.value = false;
   } catch (err) {
-    error.value = 'Hiba történt a vezetőség betöltése során. Kérjük, próbálja újra később.';
+    error.value = 'Hiba történt a munkatársak betöltése során. Kérjük, próbálja újra később.';
     loading.value = false;
-    console.error('Error loading management:', err);
+    console.error('Error loading coworkers:', err);
   }
 });
 </script>
 
 <template>
   <div class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold text-center mb-8 dark:text-white">Intézményvezetés</h1>
+    <h1 class="text-3xl font-bold text-center mb-8 dark:text-white">Munkatársak</h1>
 
     <div v-if="loading" class="flex justify-center items-center py-12">
       <Icon type="settings" size="lg" class="animate-spin text-blue-500"></Icon>
@@ -39,14 +39,14 @@ onMounted(async () => {
       <Icon type="settings" size="lg" class="text-red-500 mt-4"></Icon>
     </div>
 
-    <div v-else-if="institutionLeadershipCoworkers.length === 0" class="text-center py-12">
-      <h3 class="text-xl dark:text-white">Jelenleg nincsenek elérhető vezetők</h3>
+    <div v-else-if="regularCoworkers.length === 0" class="text-center py-12">
+      <h3 class="text-xl dark:text-white">Jelenleg nincsenek elérhető munkatársak</h3>
       <Icon type="settings" size="lg" class="text-gray-500 mt-4"></Icon>
     </div>
 
     <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div
-        v-for="coworker in institutionLeadershipCoworkers"
+        v-for="coworker in regularCoworkers"
         :key="coworker._id"
         class="bg-zinc-300 dark:bg-zinc-900 rounded-lg shadow-md overflow-hidden"
       >

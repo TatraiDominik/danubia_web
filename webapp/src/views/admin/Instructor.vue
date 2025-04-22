@@ -3,7 +3,7 @@ import { onMounted, ref } from 'vue';
 import { useInstructorStore } from '@/stores/instructors';
 import Button from '@/components/global/Button.vue';
 import Input from '@/components/global/Input.vue';
-import type { Coworker } from '@/types/Instructor';
+import type { Instructor } from '@/types/Instructor';
 import { marked } from 'marked';
 
 const instructorStore = useInstructorStore();
@@ -68,7 +68,7 @@ const resetForm = () => {
 
 const handleSubmit = async () => {
   try {
-    const instructorData: Coworker = {
+    const instructorData: Instructor = {
       fullName: fullName.value,
       subject: subject.value,
       bio: bio.value,
@@ -96,7 +96,7 @@ const handleSubmit = async () => {
   }
 };
 
-const startEditing = (instructor: Coworker & { _id?: string }) => {
+const startEditing = (instructor: Instructor) => {
   if (!instructor._id) return;
 
   editingInstructorId.value = instructor._id;

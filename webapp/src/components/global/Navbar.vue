@@ -34,7 +34,7 @@ const toggleMenu = () => {
           v-for="(navlink, key) in navlinks"
           :key="key"
           :to="`/${navlink.route}`"
-          class="hover:text-zinc-200 transition-colors duration-200 py-1 px-2 rounded-md"
+          class="hover:text-zinc-500 transition-colors duration-200 py-1 px-2 rounded-md"
         >
           {{ navlink.name }}
         </RouterLink>

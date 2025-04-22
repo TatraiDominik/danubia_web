@@ -1,10 +1,10 @@
 import { ref, type Ref } from 'vue';
 import { defineStore } from 'pinia';
 import { ApiWrapper } from '@/composables/ApiWrapper';
-import type { Coworker } from '@/types/Instructor';
+import type { Instructor } from '@/types/Instructor';
 
 export const useInstructorStore = defineStore('instructor', () => {
-  const instructors: Ref<Coworker[]> = ref([]);
+  const instructors: Ref<Instructor[]> = ref([]);
   const subjects: Ref<string[]> = ref([]);
 
   const getAllInstructors = async () => {
@@ -36,7 +36,7 @@ export const useInstructorStore = defineStore('instructor', () => {
     }
   };
 
-  const createInstructor = async (instructorData: Coworker, file?: File) => {
+  const createInstructor = async (instructorData: Instructor, file?: File) => {
     try {
       if (file) {
         const formData = new FormData();
@@ -49,7 +49,7 @@ export const useInstructorStore = defineStore('instructor', () => {
           });
         }
         formData.append('email', instructorData.email);
-        formData.append('mobile', instructorData.mobile);
+        if (instructorData.mobile) formData.append('mobile', instructorData.mobile);
         if (instructorData.facebook) formData.append('facebook', instructorData.facebook);
         if (instructorData.instagram) formData.append('instagram', instructorData.instagram);
         formData.append('file', file);
@@ -68,7 +68,7 @@ export const useInstructorStore = defineStore('instructor', () => {
     }
   };
 
-  const updateInstructor = async (id: string, instructorData: Coworker, file?: File) => {
+  const updateInstructor = async (id: string, instructorData: Instructor, file?: File) => {
     try {
       if (file) {
         const formData = new FormData();

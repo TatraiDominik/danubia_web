@@ -2,13 +2,15 @@
 import { onMounted, ref } from 'vue';
 import Button from '@/components/global/Button.vue';
 import Input from '@/components/global/Input.vue';
-import type { Coworker } from '@/types/Instructor';
+import type { Coworker } from '@/types/Coworker';
+import { CoWorkerType } from '@/types/Coworker';
 import { useCoworkerStore } from '@/stores/coworkers';
 import { marked } from 'marked';
 
 const coworkerStore = useCoworkerStore();
 const fullName = ref('');
-const subject = ref('');
+const type = ref<CoWorkerType>(CoWorkerType.EDUCATIONAL_SUPPORT);
+const occupation = ref('');
 const bio = ref('');
 const locations = ref<string[]>([]);
 const locationInput = ref('');
@@ -53,7 +55,8 @@ const removeLocation = (index: number) => {
 
 const resetForm = () => {
   fullName.value = '';
-  subject.value = '';
+  type.value = CoWorkerType.EDUCATIONAL_SUPPORT;
+  occupation.value = '';
   bio.value = '';
   locations.value = [];
   locationInput.value = '';
@@ -71,7 +74,8 @@ const handleSubmit = async () => {
   try {
     const coworkerData: Coworker = {
       fullName: fullName.value,
-      subject: subject.value,
+      type: type.value,
+      occupation: occupation.value,
       bio: bio.value,
       locations: locations.value,
       email: email.value,
@@ -104,7 +108,8 @@ const startEditing = (coworker: Coworker) => {
   isEditing.value = true;
 
   fullName.value = coworker.fullName || '';
-  subject.value = coworker.subject || '';
+  type.value = coworker.type || CoWorkerType.EDUCATIONAL_SUPPORT;
+  occupation.value = coworker.occupation || '';
   bio.value = coworker.bio || '';
   locations.value = coworker.locations || [];
   email.value = coworker.email || '';
@@ -164,7 +169,19 @@ onMounted(async () => {
         </h3>
         <div class="flex flex-col gap-4">
           <Input v-model="fullName" placeholder="Teljes név" type="text"/>
-          <Input v-model="subject" placeholder="Beosztás" type="text"/>
+
+          <div class="flex flex-col gap-1">
+            <label class="text-sm text-gray-600 dark:text-gray-300">Munkatárs típusa</label>
+            <select
+              v-model="type"
+              class="w-full p-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-zinc-800 text-gray-900 dark:text-white"
+            >
+              <option :value="CoWorkerType.EDUCATIONAL_SUPPORT">Oktatást segítő munkatárs</option>
+              <option :value="CoWorkerType.INSTITUTION_LEADERSHIP">Intézményvezetés</option>
+            </select>
+          </div>
+
+          <Input v-model="occupation" placeholder="Beosztás" type="text"/>
           <div class="flex flex-col gap-1">
             <label class="text-sm text-gray-600 dark:text-gray-300">Bemutatkozás (Markdown támogatott)</label>
             <textarea
@@ -261,7 +278,7 @@ onMounted(async () => {
 
                 <div class="flex-grow">
                   <h4 class="text-lg font-bold dark:text-white">{{ coworker.fullName }}</h4>
-                  <p class="text-blue-600 dark:text-blue-400 text-sm">{{ coworker.subject }}</p>
+                  <p class="text-blue-600 dark:text-blue-400 text-sm">{{ coworker.occupation }}</p>
 
                   <div class="mt-2 flex flex-wrap gap-2">
                     <span

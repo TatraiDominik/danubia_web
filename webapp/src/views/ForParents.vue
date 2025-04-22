@@ -26,7 +26,7 @@
       <a href="https://klik031058001.e-kreta.hu/Adminisztracio/Login" class="text-blue-400 underline" target="_blank">https://klik031058001.e-kreta.hu/Adminisztracio/Login</a>
     </p>
 
-    <div class="mt-4 md:mt-6 bg-gray-50 dark:bg-zinc-800 p-4 rounded-lg">
+    <div class="mt-4 md:mt-6  dark:bg-zinc-800 p-4 rounded-lg">
       <p class="font-semibold text-base md:text-lg">Tanulók belépéséhez szükséges adatok:</p>
       <ul class="list-disc pl-5 md:pl-10 mt-2 space-y-2">
         <li>Felhasználónév: a tanuló oktatási azonosítója</li>
@@ -65,7 +65,7 @@
       </div>
     </div>
 
-    <div class="mt-4 md:mt-6 bg-gray-50 dark:bg-zinc-800 p-4 rounded-lg">
+    <div class="mt-4 md:mt-6  dark:bg-zinc-800 p-4 rounded-lg">
       <p>
         Az e-Ellenőrző könyv kezelése nem bonyolult, de amennyiben szükséges, részletes leírást a következő címen találnak:
       </p>

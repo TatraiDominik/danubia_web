@@ -1,7 +1,8 @@
 import { ref, type Ref } from 'vue';
 import { defineStore } from 'pinia';
 import { ApiWrapper } from '@/composables/ApiWrapper';
-import type { Coworker } from '@/types/Instructor';
+import type { Coworker } from '@/types/Coworker';
+import { CoWorkerType } from '@/types/Coworker';
 
 export const useCoworkerStore = defineStore('coworker', () => {
   const coworkers: Ref<Coworker[]> = ref([]);
@@ -31,7 +32,8 @@ export const useCoworkerStore = defineStore('coworker', () => {
       if (file) {
         const formData = new FormData();
         formData.append('fullName', coworkerData.fullName);
-        formData.append('subject', coworkerData.subject);
+        formData.append('type', coworkerData.type);
+        if (coworkerData.occupation) formData.append('occupation', coworkerData.occupation);
         formData.append('bio', coworkerData.bio);
         if (coworkerData.locations && coworkerData.locations.length > 0) {
           coworkerData.locations.forEach(location => {
@@ -63,7 +65,8 @@ export const useCoworkerStore = defineStore('coworker', () => {
       if (file) {
         const formData = new FormData();
         if (coworkerData.fullName) formData.append('fullName', coworkerData.fullName);
-        if (coworkerData.subject) formData.append('subject', coworkerData.subject);
+        if (coworkerData.type) formData.append('type', coworkerData.type);
+        if (coworkerData.occupation) formData.append('occupation', coworkerData.occupation);
         if (coworkerData.bio) formData.append('bio', coworkerData.bio);
         if (coworkerData.locations && coworkerData.locations.length > 0) {
           coworkerData.locations.forEach(location => {

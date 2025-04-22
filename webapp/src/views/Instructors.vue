@@ -2,7 +2,7 @@
 import { onMounted, ref } from 'vue';
 import Icon from '@/components/global/Icon.vue';
 import { useInstructorStore } from '@/stores/instructors';
-import type { Coworker } from '@/types/Instructor';
+import type { Instructor } from '@/types/Instructor';
 import { marked } from 'marked';
 
 const instructorStore = useInstructorStore();
@@ -45,7 +45,7 @@ onMounted(async () => {
       <div
         v-for="instructor in instructorStore.instructors"
         :key="instructor._id"
-        class="bg-white dark:bg-zinc-900 rounded-lg shadow-md overflow-hidden"
+        class="bg-zinc-300 dark:bg-zinc-900 rounded-lg shadow-md overflow-hidden"
       >
         <div class="p-6 flex flex-col items-center">
           <div class="w-40 h-40 rounded-full overflow-hidden mb-4">
@@ -69,40 +69,8 @@ onMounted(async () => {
             </p>
           </div>
 
-          <div v-if="instructor.bio" class="mt-4 text-gray-700 dark:text-gray-300 text-center prose dark:prose-invert max-w-none" v-html="marked.parse(instructor.bio)"></div>
 
-          <div class="mt-6 flex justify-center space-x-4">
-            <a
-              v-if="instructor.email"
-              :href="`mailto:${instructor.email}`"
-              class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
-            >
-              <Icon type="email" size="sm"></Icon>
-            </a>
-            <a
-              v-if="instructor.mobile"
-              :href="`tel:${instructor.mobile}`"
-              class="text-green-600 hover:text-green-800 dark:text-green-400 dark:hover:text-green-300"
-            >
-              <Icon type="phone" size="sm"></Icon>
-            </a>
-            <a
-              v-if="instructor.facebook"
-              :href="instructor.facebook"
-              target="_blank"
-              class="text-blue-800 hover:text-blue-900 dark:text-blue-500 dark:hover:text-blue-400"
-            >
-            {{ instructor.facebook }}
-            </a>
-            <a
-              v-if="instructor.instagram"
-              :href="instructor.instagram"
-              target="_blank"
-              class="text-purple-600 hover:text-purple-800 dark:text-purple-400 dark:hover:text-purple-300"
-            >
-            {{ instructor.instagram }}
-            </a>
-          </div>
+
         </div>
       </div>
     </div>
