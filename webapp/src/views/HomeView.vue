@@ -114,8 +114,8 @@ const processedSvg = computed(() => {
                 <h3 class="text-xl md:text-2xl text-center dark:text-zinc-100">Jelentkezz bátran!</h3>
                 <h3 class="text-xl md:text-2xl text-center dark:text-zinc-100">Eseményeinken szívesen látunk</h3>
                 <div class="flex flex-row justify-center items-center gap-3 md:gap-5 flex-wrap">
-                  <Button rank="primary" size="normal" icon-position="none" text="Képzéseink" :onClick="()=> router.push('/trainings')"></Button>
-                  <Button rank="secondary" size="normal" icon-position="none" text="Events" :onClick="()=> router.push('/events')"></Button>
+                  <Button rank="primary" size="normal" icon-position="none" text="Szülők figyelmébe" :onClick="()=> router.push('/forParents')"></Button>
+                  <Button rank="secondary" size="normal" icon-position="none" text="Események" :onClick="()=> router.push('/events')"></Button>
                 </div>
               </div>
             </div>
