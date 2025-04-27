@@ -48,15 +48,15 @@ const processedSvg = computed(() => {
               <h3 class="2xl:text-6xl xl:text-5xl lg:text-5xl md:text-4xl sm:text-3xl text-3xl">Művészeti Iskola</h3>
             </div>
             <div class="w-full flex flex-row justify-center content-center items-center flex-wrap gap-5">
-              <Button rank="primary" size="normal" icon-position="none" text="Képzéseink" :onClick="()=> router.push('/trainings')"></Button>
-              <Button rank="secondary" size="normal" icon-position="none" text="Ismerj meg minket"></Button>
+              <Button rank="primary" size="normal" icon-position="none" text="Események" :onClick="()=> router.push('/events')"></Button>
+              <a href="#more"><Button rank="secondary" size="normal" icon-position="none" text="Ismerj meg minket"></Button></a>
               <Theme :icon-only=false></Theme>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="relative w-full min-h-screen bg-blue-600 px-4 snap-center overflow-hidden">
+      <section id="more" class="more relative w-full min-h-screen bg-blue-600 px-4 snap-center overflow-hidden">
         <div class="layered absolute w-[80%] h-[80%] top-[15%] left-0 sm:left-[-10%]"></div>
         <div class="relative flex flex-col md:flex-row justify-center items-center w-full h-full gap-5 md:gap-20 py-8 md:py-0">
           <div class="banner relative w-full sm:w-2/3 md:w-1/3 h-48 sm:h-2/6 rounded-xl"></div>
@@ -117,11 +117,6 @@ const processedSvg = computed(() => {
                   <Button rank="primary" size="normal" icon-position="none" text="Képzéseink" :onClick="()=> router.push('/trainings')"></Button>
                   <Button rank="secondary" size="normal" icon-position="none" text="Events" :onClick="()=> router.push('/events')"></Button>
                 </div>
-              </div>
-              <div class="flex flex-col justify-center items-center gap-5">
-                <h3 class="text-xl md:text-2xl text-center dark:text-zinc-100">Danubia iroda:</h3>
-                <h3 class="text-xl md:text-2xl text-center dark:text-zinc-100">+367012345</h3>
-                <Button rank="secondary" size="normal" icon-position="none" text="Kapcsolatok" :onClick="()=> router.push('/contacts')"></Button>
               </div>
             </div>
           </div>
