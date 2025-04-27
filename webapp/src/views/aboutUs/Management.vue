@@ -51,12 +51,12 @@ onMounted(async () => {
         class="bg-zinc-300 dark:bg-zinc-900 rounded-lg shadow-md overflow-hidden"
       >
         <div class="p-6 flex flex-col items-center">
-          <div class="w-40 h-40 rounded-full overflow-hidden mb-4">
+          <div class="w-40 h-40 rounded-full overflow-hidden mb-4 image-container">
             <img
               v-if="coworker.pfp"
               :src="`http://91.214.112.195:3001/danubia_api/file/${coworker.pfp}`"
               :alt="coworker.fullName"
-              class="w-full h-full object-cover"
+              class="w-full h-full object-cover image"
             />
             <div v-else class="w-full h-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
               <Icon type="person" size="lg" class="text-gray-500 dark:text-gray-400"></Icon>
@@ -65,15 +65,6 @@ onMounted(async () => {
 
           <h3 class="text-xl font-semibold text-center dark:text-white">{{ coworker.fullName }}</h3>
           <p class="text-blue-600 dark:text-blue-400 text-center mt-1">{{ coworker.occupation }}</p>
-
-          <div class="mt-4 text-center">
-            <p v-if="coworker.locations && coworker.locations.length > 0" class="text-sm text-gray-600 dark:text-gray-300">
-              <span class="font-medium">Helyszínek:</span> {{ coworker.locations.join(', ') }}
-            </p>
-          </div>
-
-          <div v-if="coworker.bio" class="mt-4 text-sm text-gray-700 dark:text-gray-300 prose dark:prose-invert max-w-none text-center" v-html="marked.parse(coworker.bio)"></div>
-
           <div class="mt-4 flex justify-center gap-4">
             <a v-if="coworker.email" :href="`mailto:${coworker.email}`" class="text-blue-600 dark:text-blue-400 hover:underline">
               <Icon type="mail" size="sm" class="mr-1"></Icon>
@@ -97,3 +88,19 @@ onMounted(async () => {
     </div>
   </div>
 </template>
+<style>
+.image-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 8%;
+}
+</style>

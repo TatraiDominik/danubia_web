@@ -9,8 +9,6 @@ const instructorStore = useInstructorStore();
 const loading = ref(true);
 const error = ref<string | null>(null);
 
-
-
 onMounted(async () => {
   try {
     await instructorStore.getAllInstructors();
@@ -48,12 +46,12 @@ onMounted(async () => {
         class="bg-zinc-300 dark:bg-zinc-900 rounded-lg shadow-md overflow-hidden"
       >
         <div class="p-6 flex flex-col items-center">
-          <div class="w-40 h-40 rounded-full overflow-hidden mb-4">
+          <div class="w-40 h-40 rounded-full overflow-hidden mb-4 instructor-image-container">
             <img
               v-if="instructor.pfp"
               :src="`http://91.214.112.195:3001/danubia_api/file/${instructor.pfp}`"
               :alt="instructor.fullName"
-              class="w-full h-full object-cover"
+              class="w-full h-full object-cover instructor-image"
             />
             <div v-else class="w-full h-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
               <Icon type="person" size="lg" class="text-gray-500 dark:text-gray-400"></Icon>
@@ -69,10 +67,25 @@ onMounted(async () => {
             </p>
           </div>
 
-
-
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<style>
+.instructor-image-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.instructor-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+}
+</style>

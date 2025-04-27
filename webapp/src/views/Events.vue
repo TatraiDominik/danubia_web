@@ -11,7 +11,7 @@ onMounted(async () => {
 </script>
 
 <template>
-<div class="flex flex-col justify-center content-center items-center w-full h-full gap-10">
+<div class="flex flex-col justify-start content-center items-center w-full h-full gap-10">
   <h3 class="text-3xl">Eseményeink</h3>
 
   <div class="w-5/6">
